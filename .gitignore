@@ -24,3 +24,4 @@ zoom_deep_scrape-*.tar
 
 /config/secrets.exs
 
+*.png

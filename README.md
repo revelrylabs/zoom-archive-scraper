@@ -1,21 +1,48 @@
 # ZoomDeepScrape
 
-**TODO: Add description**
+A small scraper example in elixir using hound. Scrapes the Recording Management
+pages of Zoom to save old recordings.
 
-## Installation
+## Installation & Use
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `zoom_deep_scrape` to your list of dependencies in `mix.exs`:
+This code is just an example / experiment and isn't intended for production use.
 
-```elixir
-def deps do
-  [
-    {:zoom_deep_scrape, "~> 0.1.0"}
-  ]
-end
+### Requirements
+
+This requires elixir, erlang, chromedriver, and chrome.
+
+### Installation
+
+```
+git clone git@github.com:revelrylabs/zoom-archive-scraper.git
+cd zoom-archive-scraper
+mix deps.get
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/zoom_deep_scrape](https://hexdocs.pm/zoom_deep_scrape).
+You will need to create `config/secrets.exs` and fill in with username and
+password.
 
+```elixir
+use Mix.Config
+
+config :zoom_deep_scrape, username: "example@example.com"
+config :zoom_deep_scrape, password: "example"
+```
+
+### Usage
+
+```
+bin/console
+```
+
+At the console you can do:
+
+```elixir
+ZoomDeepScrape.login
+ZoomDeepScrape.list_links_for_page(1) # or whatever
+```
+
+This will download all the recordings from page 1 into the default download
+directory for
+
+##
